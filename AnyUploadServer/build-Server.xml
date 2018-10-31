@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <project name="Server" default="dist" basedir=".">
-	<property name="Server-src" location="${Server.dir}/src/main/java" />
-	<property name="Server-build" location="${Server.dir}/build" />
-	<property name="Server-dist" location="${Server.dir}/dist" />
-	<property name="Server-WebContent" value="${Server.dir}/WebContent" />
+	<property name="Server-src" location="src/main/java" />
+	<property name="Server-build" location="build" />
+	<property name="Server-dist" location="dist" />
+	<property name="Server-WebContent" value="WebContent" />
 	<property name="webxml" value="${Server-WebContent}/WEB-INF/web.xml" />
 	<target name="generwar" depends="distServer">
 		<war destfile="${Server-dist}/AnyUploadServer.war" webxml="${webxml}">

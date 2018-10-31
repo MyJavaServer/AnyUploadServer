@@ -1,17 +1,16 @@
 package org.anyupload;
 
-import javax.servlet.http.HttpServlet;
+import org.grain.httpserver.*;
 
-import org.grain.httpserver.HttpManager;
-import org.grain.httpserver.IExpandServer;
+import javax.servlet.http.HttpServlet;
 
 public class Expand implements IExpandServer {
 
-	@Override
-	public void init(HttpServlet servlet) throws Exception {
-		// 初始化映射
-		HOpCode.init();
-		// 初始化服务
-		HttpManager.addHttpListener(new UploadService());
-	}
+    @Override
+    public void init(HttpServlet servlet) throws Exception {
+        // 初始化映射
+        HOpCode.init();
+        // 初始化服务
+        HttpManager.addHttpListener(new UploadService());
+    }
 }

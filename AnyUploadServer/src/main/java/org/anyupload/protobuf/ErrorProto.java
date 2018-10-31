@@ -99,6 +99,7 @@ public final class ErrorProto {
      * <code>ERROR_CODE_9 = 9;</code>
      */
     ERROR_CODE_9(9),
+    ERROR_CODE_10(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -182,6 +183,7 @@ public final class ErrorProto {
      * <code>ERROR_CODE_9 = 9;</code>
      */
     public static final int ERROR_CODE_9_VALUE = 9;
+    public static final int ERROR_CODE_10_VALUE = 10;
 
 
     public final int getNumber() {
@@ -212,6 +214,7 @@ public final class ErrorProto {
         case 7: return ERROR_CODE_7;
         case 8: return ERROR_CODE_8;
         case 9: return ERROR_CODE_9;
+        case 10: return ERROR_CODE_10;
         default: return null;
       }
     }

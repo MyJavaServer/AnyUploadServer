@@ -2,6 +2,7 @@ package org.anyupload;
 
 import java.io.File;
 
+
 public interface IUserFileAction {
 	/**
 	 * 根据md5获取已经存在并且上传完成的
@@ -44,7 +45,7 @@ public interface IUserFileAction {
 	 *            基础文件对象
 	 * @return
 	 */
-	public UserFile createUserFile(String userFileName, String userFoldParentId, String createUserId, String fileBaseMd5, long fileBaseTotalSize, FileBase fileBase);
+	public UserFile createUserFile(String userFileName, String userFoldParentId, String createUserId, String fileBaseMd5, long fileBaseTotalSize, FileBase fileBase,String foldName);
 
 	/**
 	 * 改变文件指向
