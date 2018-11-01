@@ -13,7 +13,7 @@ public class HttpLog implements ILog {
 
 	@Override
 	public void warn(String warn) {
-//		this.log.warn(warn);
+		this.log.warn(warn);
 	}
 
 	@Override
@@ -22,8 +22,9 @@ public class HttpLog implements ILog {
 	}
 
 	@Override
+
 	public void info(String info) {
-//		this.log.info(info);
+		this.log.info(info);
 	}
 
 }

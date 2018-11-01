@@ -86,4 +86,6 @@ public interface IUserFileAction {
 	 * @return
 	 */
 	public boolean updateUserFile(UserFile userFile, int uploadLength);
+
+
 }

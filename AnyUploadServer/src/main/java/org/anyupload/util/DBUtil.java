@@ -3,30 +3,9 @@ package org.anyupload.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import static org.anyupload.CommonConfig.*;
 
 public class DBUtil {
-
-    //    public static final String MODE = "dev";
-//    public static final String MODE = "live";
-//    public static final String MODE = "test";
-    public static final String MODE = "local";
-
-
-    private static final String URL_LOCAL = "jdbc:mysql://127.0.0.1:3306/wecloudDb1108?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&serverTimezone=Asia/Shanghai";
-    private static final String USER_LOCAL = "root";
-    private static final String PASSWORD_LOCAL = "dtx60pp";
-
-    private static final String URL_TEST = "jdbc:mysql://47.98.54.22:3306/wecloudDbTest?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&serverTimezone=Asia/Shanghai";
-    private static final String USER_TEST = "root";
-    private static final String PASSWORD_TEST = "dtx60";
-
-    private static final String URL_DEV = "jdbc:mysql://120.26.48.110:3306/wecloudDb1108?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&serverTimezone=Asia/Shanghai";
-    private static final String USER_DEV = "root";
-    private static final String PASSWORD_DEV = "dtx60pp";
-
-    private static final String URL_LIVE = "jdbc:mysql://47.98.54.22:3306/wecloudDb1108?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&serverTimezone=Asia/Shanghai";
-    private static final String USER_LIVE = "root";
-    private static final String PASSWORD_LIVE = "dtx60";
 
     private static Connection conn = null;
 

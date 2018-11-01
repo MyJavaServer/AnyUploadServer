@@ -1,20 +1,16 @@
 package org.anyupload;
 
+import org.grain.httpserver.HttpConfig;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-
-import org.anyupload.util.DBUtil;
-import org.grain.httpserver.HttpConfig;
 
 public class UserFileAction implements IUserFileAction {
     public static String FILE_BASE_PATH;
@@ -162,7 +158,7 @@ public class UserFileAction implements IUserFileAction {
             userFile.getFileBase().setFileBaseCompleteTime(date);
             userFile.getFileBase().setFileBaseState((byte) FileBaseConfig.STATE_COMPLETE);
             // 存入md5映射表
-            completeFileBaseMap.put(userFile.getFileBase().getFileBaseMd5(), userFile.getFileBase());
+//            completeFileBaseMap.put(userFile.getFileBase().getFileBaseMd5(), userFile.getFileBase());
         } else {
             long fileBaseNextUploadTimeLong = date.getTime() + CommonConfig.WAIT_TIME;
             Date fileBaseNextUploadTime = new Date(fileBaseNextUploadTimeLong);
@@ -170,6 +166,7 @@ public class UserFileAction implements IUserFileAction {
         }
         return true;
     }
+
 
     @Override
     public void createFileBaseDir() {
@@ -247,16 +244,5 @@ public class UserFileAction implements IUserFileAction {
         }
     }
 
-    private void saveFile(String name, String path, String size) throws SQLException {
-        Connection conn = DBUtil.getConnection();
-        String s = " " + "insert into dl_dset(name,path,size) values(" + "?,?,?)";
-        PreparedStatement pst = conn.prepareStatement(s);
-        pst.setString(1, name);
-        pst.setString(2, path);
-        pst.setString(3, size);
-        pst.execute();
-        //关闭资源
-        pst.close();
-        conn.close();
-    }
+
 }
