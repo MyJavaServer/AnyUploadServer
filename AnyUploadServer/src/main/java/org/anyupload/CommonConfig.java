@@ -8,15 +8,15 @@ public class CommonConfig {
     /**
      * 最大上传长度
      */
-    public static int UPLOAD_MAX_LENGTH = 6553600;
+    public static int UPLOAD_MAX_LENGTH = 3145728;
     /**
      * 客户端下一次上传文件间隔
      */
-    public static int WAIT_TIME = 640;
+    public static int WAIT_TIME = 10;
     /**
      * 一次性写入文件的大小
      */
-    public static int ONCE_WRITE_FILE_SIZE = 6553600;
+    public static int ONCE_WRITE_FILE_SIZE = 3145728;
 
 
     public static final String MODE = "dev";

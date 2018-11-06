@@ -227,24 +227,24 @@ public class UploadService implements IHttpListener {
     public ReplyString deleteFileHandle(HttpPacket httpPacket) {
         JSONObject params = JSONObject.fromObject(httpPacket.hSession.headParam.token);
         String token = params.getString("Authorization");
-        String foldName = null;
+        String fileId = null;
         UserToken userToken = null;
         JSONObject jsonObject = new JSONObject();
         try {
             userToken = checkUser(token, httpPacket.gethOpCode());
-            foldName = params.getString("fileId");
+            fileId = params.getString("fileId");
         } catch (HttpException e) {
             e.printStackTrace();
         }
-        if (!foldName.startsWith(userToken.getUserId() + "")) {
+        if (!fileId.startsWith(userToken.getUserId() + "")) {
             jsonObject.put("status", "0");
             jsonObject.put("result", "无权限！");
             return new ReplyString(jsonObject.toString(), "application/json");
         }
-        foldName = "/" + userToken.getUserId() + "/system/datasets/" + foldName;
+       String foldName = "/" + userToken.getUserId() + "/system/datasets/" + fileId;
         UserFileAction.deleteFile(foldName);
         try {
-            deleteFile(foldName);
+            deleteFile(fileId);
         } catch (SQLException e) {
             e.printStackTrace();
         }
