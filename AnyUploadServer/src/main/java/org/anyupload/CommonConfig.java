@@ -4,7 +4,7 @@ public class CommonConfig {
     /**
      * 基础文件路径
      */
-    public static String FILE_BASE_PATH = "/notebook/storage/";
+    public static String FILE_BASE_PATH = "/Users/jerryyin/workspace/notebook/storage/";
     /**
      * 最大上传长度
      */
